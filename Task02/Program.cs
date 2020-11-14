@@ -86,11 +86,15 @@ namespace Task02
 
                 if (!CheckArray(A))
                 {
-                    Console.WriteLine("Incorrect Input.");
+                    Console.WriteLine("Incorrect Input");
                 }
-
-                B = ConvertArray(A);
-                WriteFile(outputPath, B);
+                else
+                {
+                    B = ConvertArray(A);
+                    WriteFile(outputPath, B);
+                    ConsoleOutput();
+                }
+               
             }
             catch (IOException ex)
             {
@@ -102,7 +106,7 @@ namespace Task02
             }
 
             // do not touch
-            ConsoleOutput();
+            //ConsoleOutput();
         }
 
         #region Testing methods for Github Classroom, do not touch!

@@ -61,7 +61,13 @@ namespace _01_07_Files
 
         static void WriteFile(string path, bool[] array)
         {
-            File.WriteAllText(path, string.Join(" ", array));
+            string text = "";
+            foreach(var el in array)
+            {
+                text += el ? "true " : "false ";
+            }
+            text.TrimEnd();
+            File.WriteAllText(path, text);
         }
 
         // you do not need to fill your file, you can work with console input
@@ -79,13 +85,14 @@ namespace _01_07_Files
 
                 if (!CheckArray(A))
                 {
-                    Console.WriteLine("Incorrect Input.");
+                    Console.WriteLine("Incorrect Input");
                 }
                 else 
                 {
                     L = IntToBoolArray(A);
                     WriteFile(outputPath, L);
-                }                    
+                    ConsoleOutput();
+                }
             }
             catch(IOException ex)
             {
@@ -97,7 +104,7 @@ namespace _01_07_Files
             }
 
             // do not touch
-            ConsoleOutput();
+            //ConsoleOutput();
         }
 
         #region Testing methods for Github Classroom, do not touch!

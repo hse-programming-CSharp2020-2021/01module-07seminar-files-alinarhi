@@ -61,7 +61,7 @@ namespace Task02
                 {
                     value = Math.Pow(2, ++pow);
                 }
-                converted[i] = (int)(value / 2);
+                converted[i] = array[i] == 2 ? 1 : (int)(value / 2);
             }
             return converted;
         }
@@ -94,7 +94,7 @@ namespace Task02
                     WriteFile(outputPath, B);
                     ConsoleOutput();
                 }
-               
+
             }
             catch (IOException ex)
             {

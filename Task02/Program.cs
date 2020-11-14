@@ -57,7 +57,7 @@ namespace Task02
             {
                 pow = 0;
                 value = 1;
-                while (value <= array[i])
+                while (value < array[i])
                 {
                     value = Math.Pow(2, ++pow);
                 }
